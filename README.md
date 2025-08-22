@@ -61,3 +61,10 @@ Fortunately, the Vite's default behavior is easy to get back:
 https://github.com/vitejs/vite/blob/e899bc7c73a27cdf327875e5d696c50d396a7fc2/packages/vite/src/node/server/index.ts#L1126-L1127
 
 Their default calls `searchForWorkspaceRoot()`, which is exposed by Vite and can be called manually as documented in https://vite.dev/config/server-options.html#server-fs-allow.
+
+I confirmed that updating the Angular code to the following fixes the issue:
+
+```diff
+- join(serverOptions.workspaceRoot, 'node_modules'),
++ searchForWorkspaceRoot(serverOptions.workspaceRoot),
+```
