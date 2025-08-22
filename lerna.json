@@ -1,0 +1,3 @@
+// This file is created to help Vite detect that this is a monorepo.
+// Real monorepo will have "workspaces" field in the package.json instead
+// (not doing it here as that would override the node_modules folder I included for reproduction)
